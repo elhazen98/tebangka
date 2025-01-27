@@ -71,7 +71,6 @@ function handleGuess(e) {
     }
   }
   e.target.reset();
-  firstDigit.focus();
 }
 
 function setTrial(trial, text) {
