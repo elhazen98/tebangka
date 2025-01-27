@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "tw:run": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
+    "tw:dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
     "tw:build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css",
     "bundle:dev": "npx webpack ./src/main.js --watch",
-    "dev": "concurrently \"npm run tw:run\" \"npm run bundle:dev\""
+    "bundle:build": "npx webpack ./src/main.js",
+    "dev": "concurrently \"npm run tw:dev\" \"npm run bundle:dev\"",
+    "build": "concurrently \"npm run tw:build\" \"npm run bundle:build\""
   },
   "keywords": [],
   "author": "",
