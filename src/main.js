@@ -43,12 +43,11 @@ function handleGuess(e) {
 
   if (numberAnswer === null) {
     print("Press Start Button");
-    e.target.reset();
   } else {
     const numberGuessed = [
-      document.getElementById("first-digit").value,
-      document.getElementById("second-digit").value,
-      document.getElementById("third-digit").value,
+      firstDigit.value,
+      secondDigit.value,
+      thirdDigit.value,
     ];
 
     const result = checkNumber(numberGuessed, numberAnswer);
@@ -70,8 +69,9 @@ function handleGuess(e) {
         print(`Game Over, the secret number is ${numberAnswer.join("")}`);
       }
     }
-    e.target.reset();
   }
+  e.target.reset();
+  firstDigit.focus();
 }
 
 function setTrial(trial, text) {
@@ -93,6 +93,9 @@ const infoContent = [
 
 const start = document.getElementById("start");
 const guessForm = document.getElementById("guess-form");
+const firstDigit = document.getElementById("first-digit");
+const secondDigit = document.getElementById("second-digit");
+const thirdDigit = document.getElementById("third-digit");
 const info = document.getElementById("info");
 const popup = document.getElementById("popup");
 const popupContent = document.getElementById("popup-content");
@@ -103,9 +106,9 @@ start.addEventListener("click", () => {
   numberAnswer = generateNumber();
   trial = 7;
   setTrial(trial, "🩷");
-  document.getElementById("first-digit").value = "";
-  document.getElementById("second-digit").value = "";
-  document.getElementById("third-digit").value = "";
+  firstDigit.value = "";
+  secondDigit.value = "";
+  thirdDigit.value = "";
   print("Secret number generated!");
 });
 
@@ -124,4 +127,42 @@ info.addEventListener("click", () => {
 
 ok.addEventListener("click", () => {
   popup.style.display = "none";
+});
+
+// Add input event listeners
+firstDigit.addEventListener("input", function (e) {
+  e.target.value = e.target.value.replace(/[^0-9]/g, "");
+  if (e.target.value !== "") {
+    secondDigit.focus();
+  }
+});
+
+secondDigit.addEventListener("input", function (e) {
+  e.target.value = e.target.value.replace(/[^0-9]/g, "");
+  if (e.target.value !== "") {
+    thirdDigit.focus();
+  }
+});
+
+thirdDigit.addEventListener("input", function (e) {
+  e.target.value = e.target.value.replace(/[^0-9]/g, "");
+});
+
+// Add backspace event listeners
+firstDigit.addEventListener("keydown", function (e) {
+  if (e.key === "Backspace" && e.target.value === "") {
+    firstDigit.focus();
+  }
+});
+
+secondDigit.addEventListener("keydown", function (e) {
+  if (e.key === "Backspace" && e.target.value === "") {
+    firstDigit.focus();
+  }
+});
+
+thirdDigit.addEventListener("keydown", function (e) {
+  if (e.key === "Backspace" && e.target.value === "") {
+    secondDigit.focus();
+  }
 });
