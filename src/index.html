@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tebangka</title>
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div
+      id="container"
+      class="font-(family-name: 'Ones') flex h-dvh flex-col items-center justify-evenly"
+    >
+      <div class="flex flex-col text-end">
+        <div id="game-title" class="game-title text-6xl">TEB4NGKA</div>
+        <div id="version" class="text-xs text-gray-400">v 1.0.0</div>
+      </div>
+      <main class="flex flex-col items-center gap-y-10">
+        <div class="box-border flex w-full justify-between">
+          <div id="trial" class="text-xl"></div>
+          <div class="flex gap-2">
+            <button
+              id="start"
+              type="button"
+              class="size-12 rounded-md bg-emerald-600 text-xs font-bold text-white transition duration-300 hover:scale-105"
+            >
+              Start
+            </button>
+            <button
+              id="info"
+              type="button"
+              class="size-12 rounded-md bg-amber-400 text-xs font-bold text-gray-900 transition duration-300 hover:scale-105"
+            >
+              Info
+            </button>
+          </div>
+        </div>
+        <form id="guess-form" class="flex flex-col gap-y-4">
+          <div class="flex gap-x-4">
+            <input
+              type="number"
+              id="first-digit"
+              min="0"
+              max="9"
+              required
+              class="input"
+            />
+            <input
+              type="number"
+              id="second-digit"
+              min="0"
+              max="9"
+              required
+              class="input"
+            />
+            <input
+              type="number"
+              id="third-digit"
+              min="0"
+              max="9"
+              required
+              class="input"
+            />
+          </div>
+          <button
+            type="submit"
+            class="h-10 rounded-2xl bg-gray-900 font-bold text-white transition duration-300 hover:scale-105"
+          >
+            Submit
+          </button>
+        </form>
+        <div
+          class="box-border h-56 w-87 rounded-2xl border-1 border-gray-300 shadow-md shadow-slate-200"
+        >
+          <div id="log" class="flex flex-col items-center gap-1 p-2"></div>
+        </div>
+      </main>
+      <div id="game-developer" class="text-gray-400">elhazen | ©2025</div>
+    </div>
+    <div
+      id="popup"
+      class="absolute inset-0 hidden bg-black/50 backdrop-blur-sm"
+    >
+      <div class="flex h-dvh flex-col items-center justify-center">
+        <div
+          class="flex h-70 w-87 flex-col items-center justify-around rounded-2xl bg-white shadow-2xl shadow-gray-600"
+        >
+          <div id="popup-title" class="text-2xl font-bold">How To Play</div>
+          <div
+            id="popup-content"
+            class="flex flex-col items-center gap-0.5"
+          ></div>
+          <button
+            id="ok"
+            type="button"
+            class="rounded-2xl bg-gray-900 pt-2 pr-10 pb-2 pl-10 text-white transition duration-300 hover:scale-105"
+          >
+            ok
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

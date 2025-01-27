@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer components {
+  .input {
+    font-family: "Onest", serif;
+    @apply box-border size-26 rounded-2xl border-1 border-gray-300 text-center text-2xl font-bold shadow-md shadow-slate-200 [&::-webkit-inner-spin-button]:appearance-none;
+  }
+  .input:focus {
+    @apply border-2 border-gray-900 outline-none [&::-webkit-inner-spin-button]:appearance-none;
+  }
+  .game-title {
+    font-family: "Bagel Fat One", serif;
+  }
+  .text-info {
+    @apply pr-1 pl-1 text-center text-xs font-bold;
+  }
+}
+
+@layer base {
+  html {
+    font-family: "Onest", serif;
+  }
+  p {
+    @apply pr-1 pl-1 text-sm font-bold;
+  }
+}
