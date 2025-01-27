@@ -23,7 +23,7 @@
     >
       <div class="flex flex-col text-end">
         <div id="game-title" class="game-title text-6xl">TEB4NGKA</div>
-        <div id="version" class="text-xs text-gray-400">v 1.0.1</div>
+        <div id="version" class="text-xs text-gray-400">v 1.0.2</div>
       </div>
       <main class="flex flex-col items-center gap-y-10">
         <div class="box-border flex w-full justify-between">
@@ -85,7 +85,9 @@
           <div id="log" class="flex flex-col items-center gap-1 p-2"></div>
         </div>
       </main>
-      <div id="game-developer" class="text-gray-400">elhazen | ©2025</div>
+      <div id="game-developer" class="text-xs text-gray-400">
+        elhazen | ©2025
+      </div>
     </div>
     <div
       id="popup"
@@ -93,13 +95,13 @@
     >
       <div class="flex h-dvh flex-col items-center justify-center">
         <div
-          class="flex h-70 w-87 flex-col items-center justify-around rounded-2xl bg-white shadow-2xl shadow-gray-600"
+          class="flex h-87 w-87 flex-col items-center justify-around rounded-2xl bg-white shadow-2xl shadow-gray-600"
         >
           <div id="popup-title" class="text-2xl font-bold">How To Play</div>
-          <div
+          <ul
             id="popup-content"
-            class="flex flex-col items-center gap-0.5"
-          ></div>
+            class="flex w-70 list-outside list-disc flex-col items-start gap-0.5"
+          ></ul>
           <button
             id="ok"
             type="button"

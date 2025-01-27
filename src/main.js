@@ -42,6 +42,8 @@ function handleGuess(e) {
   e.preventDefault();
 
   if (numberAnswer === null) {
+    document.getElementById("log").innerHTML = "";
+    setTrial();
     print("Press Start Button");
   } else {
     const numberGuessed = [
@@ -55,9 +57,10 @@ function handleGuess(e) {
     if (result.rightNumber === 3 && result.rightPlace === 3) {
       setTrial(trial, "🏆");
       print(`You're correct, the secret number is ${numberGuessed.join("")}!`);
+      numberAnswer = null;
     } else {
       trial--;
-      setTrial(trial, "🩷");
+      setTrial(trial, "💜");
       if (trial > 0) {
         print(
           `${numberGuessed.join("")} : ${
@@ -66,7 +69,8 @@ function handleGuess(e) {
         );
       } else {
         setTrial(1, "💩");
-        print(`Game Over, the secret number is ${numberAnswer.join("")}`);
+        print(`Game Over, the secret number is ${numberAnswer.join("")}.`);
+        numberAnswer = null;
       }
     }
   }
@@ -82,12 +86,13 @@ function setTrial(trial, text) {
 let numberAnswer = null;
 let trial = 0;
 const infoContent = [
-  "• Press the 'Start' button.",
-  "• You have a secret number between 0 & 999.",
-  "• If the secret number is less than 100,",
-  "it will have a leading zero.",
-  "• Guess each digit of the secret number.",
-  "• You have 7 chances to guess it.",
+  "Press the 'Start' button.",
+  "You have a secret number between 0 & 999.",
+  "If the secret number is less than 100, it will have a leading zero.",
+  "Guess each digit of the secret number.",
+  "'x right numbers' means you guessed x correct numbers, regardless of their positions.",
+  "'x right places' means you guessed x numbers in their correct positions.",
+  "You have 7 chances to guess it.",
 ];
 
 const start = document.getElementById("start");
@@ -104,7 +109,7 @@ start.addEventListener("click", () => {
   document.getElementById("log").innerHTML = "";
   numberAnswer = generateNumber();
   trial = 7;
-  setTrial(trial, "🩷");
+  setTrial(trial, "💜");
   firstDigit.value = "";
   secondDigit.value = "";
   thirdDigit.value = "";
@@ -117,7 +122,7 @@ info.addEventListener("click", () => {
   popup.style.display = "block";
   popupContent.innerHTML = "";
   infoContent.forEach((text) => {
-    const textInfo = document.createElement("p");
+    const textInfo = document.createElement("li");
     textInfo.classList = "text-info";
     textInfo.textContent = text;
     popupContent.append(textInfo);

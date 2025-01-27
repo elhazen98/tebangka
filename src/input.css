@@ -12,7 +12,7 @@
     font-family: "Bagel Fat One", serif;
   }
   .text-info {
-    @apply pr-1 pl-1 text-center text-xs font-bold;
+    @apply pr-1 pl-1 text-start text-xs font-bold;
   }
 }
 
