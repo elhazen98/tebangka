@@ -533,6 +533,9 @@
   .pointer-events-none {
     pointer-events: none;
   }
+  .\!visible {
+    visibility: visible !important;
+  }
   .collapse {
     visibility: collapse;
   }
@@ -562,6 +565,12 @@
     overflow: visible;
     clip: auto;
     white-space: normal;
+  }
+  .\!fixed {
+    position: fixed !important;
+  }
+  .\!relative {
+    position: relative !important;
   }
   .absolute {
     position: absolute;
@@ -598,9 +607,6 @@
   }
   .isolation-auto {
     isolation: auto;
-  }
-  .z-0 {
-    z-index: 0;
   }
   .z-auto {
     z-index: auto;
@@ -710,6 +716,15 @@
   .m-1 {
     margin: calc(var(--spacing) * 1);
   }
+  .m-48 {
+    margin: calc(var(--spacing) * 48);
+  }
+  .m-65 {
+    margin: calc(var(--spacing) * 65);
+  }
+  .m-97 {
+    margin: calc(var(--spacing) * 97);
+  }
   .box-border {
     box-sizing: border-box;
   }
@@ -721,6 +736,12 @@
     display: block;
     -webkit-box-orient: horizontal;
     -webkit-line-clamp: unset;
+  }
+  .\!block {
+    display: block !important;
+  }
+  .\!contents {
+    display: contents !important;
   }
   .\!hidden {
     display: none !important;
@@ -854,9 +875,6 @@
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
-  }
-  .w-2 {
-    width: calc(var(--spacing) * 2);
   }
   .w-65 {
     width: calc(var(--spacing) * 65);
@@ -1386,9 +1404,6 @@
   .justify-items-stretch {
     justify-items: stretch;
   }
-  .gap-0 {
-    gap: calc(var(--spacing) * 0);
-  }
   .gap-0\.5 {
     gap: calc(var(--spacing) * 0.5);
   }
@@ -1745,9 +1760,6 @@
   .bg-amber-400 {
     background-color: var(--color-amber-400);
   }
-  .bg-black {
-    background-color: var(--color-black);
-  }
   .bg-black\/50 {
     background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
   }
@@ -1952,6 +1964,12 @@
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
+  }
+  .p-48 {
+    padding: calc(var(--spacing) * 48);
+  }
+  .p-97 {
+    padding: calc(var(--spacing) * 97);
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
@@ -2612,6 +2630,9 @@
   }
   .forced-color-adjust-none {
     forced-color-adjust: none;
+  }
+  .\[host\:\]port\] {
+    host: ]port;
   }
   .\[keywords\:node-addon-api\] {
     keywords: node-addon-api;
